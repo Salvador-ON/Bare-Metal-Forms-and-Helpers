@@ -1,4 +1,7 @@
 <%= form_for @user do |f| %>
+  <% @user.errors.full_messages.each do |error| %>
+  <h3><%= error %></h3>
+  <% end %>
 <p>
   <%= f.label :username, :value => "your user here:" %> <br/>
   <%= f.text_field :username, :placeholder => "your name" %>
